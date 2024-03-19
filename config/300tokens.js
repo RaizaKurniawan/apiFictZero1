@@ -302,4 +302,4 @@ const accessTokens = [
 
 ];
 
-module.exports = accessTokens;
+module.exports = accessTokens.map(token => ({ token, used: false }));;
