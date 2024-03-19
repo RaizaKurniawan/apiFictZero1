@@ -185,6 +185,46 @@ properties.parse(path.resolve(__dirname, '../config/env.properties'), { path: tr
                 });
             });
 
+            describe('Scenario 8: Authentication Failed - Invalid Token', function() {
+                it('should return 401 Unauthorized', function(done) {
+                    const invalidToken = 'invalid_token'; // Token yang tidak valid
+                    const options = {
+                        method: 'GET',
+                        url: `${baseUrl}/wallet?address=${validWalletAddress}`,
+                        headers: {
+                            'Authorization': `Bearer ${invalidToken}`
+                        }
+                    };
+            
+                    request(options, function(error, response, body) {
+                        assert.equal(response.statusCode, 401);
+                        const responseBody = JSON.parse(body);
+                        assert.equal(responseBody.error, 'Unauthorized');
+                        done();
+                    });
+                });
+            });
+            
+            describe('Scenario 9: Authentication Failed - Empty Token', function() {
+                it('should return 401 Unauthorized', function(done) {
+                    const emptyToken = ''; // Token kosong
+                    const options = {
+                        method: 'GET',
+                        url: `${baseUrl}/wallet?address=${validWalletAddress}`,
+                        headers: {
+                            'Authorization': `Bearer ${emptyToken}`
+                        }
+                    };
+            
+                    request(options, function(error, response, body) {
+                        assert.equal(response.statusCode, 401);
+                        const responseBody = JSON.parse(body);
+                        assert.equal(responseBody.error, 'Unauthorized');
+                        done();
+                    });
+                });
+            });
+            
         });
     });
 });
