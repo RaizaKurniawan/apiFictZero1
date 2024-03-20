@@ -60,6 +60,7 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 400 Bad Request');
       } catch (error) {
         assert.strictEqual(error.response.status, 400);
+        assert.strictEqual(error.response.data.statusCode, 'BadRequest');
       }
     });
   
@@ -77,6 +78,7 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 400 Bad Request');
       } catch (error) {
         assert.strictEqual(error.response.status, 400);
+        assert.strictEqual(error.response.data.statusCode, 'BadRequest');
       }
     });
   
@@ -89,6 +91,7 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 400 Bad Request');
       } catch (error) {
         assert.strictEqual(error.response.status, 400);
+        assert.strictEqual(error.response.data.statusCode, 'BadRequest');
       }
     });
   
@@ -105,6 +108,7 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 400 Bad Request');
       } catch (error) {
         assert.strictEqual(error.response.status, 400);
+        assert.strictEqual(error.response.data.statusCode, 'BadRequest');
       }
     });
   
@@ -121,6 +125,7 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 400 Bad Request');
       } catch (error) {
         assert.strictEqual(error.response.status, 400);
+        assert.strictEqual(error.response.data.statusCode, 'BadRequest');
       }
     });
   
@@ -137,6 +142,7 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 400 Bad Request');
       } catch (error) {
         assert.strictEqual(error.response.status, 400);
+        assert.strictEqual(error.response.data.statusCode, 'BadRequest');
       }
     });
   
@@ -154,6 +160,7 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 400 Bad Request');
       } catch (error) {
         assert.strictEqual(error.response.status, 400);
+        assert.strictEqual(error.response.data.statusCode, 'BadRequest');
       }
     });
   });
@@ -173,7 +180,10 @@ describe('Epic FictZero API Services - Stake NFT', function () {
         assert.fail('Expected request to fail with 404 Not Found');
       } catch (error) {
         assert.strictEqual(error.response.status, 404);
+        assert.strictEqual(error.response.data.statusCode, 'NotFound');
       }
     });
   });
 });
+
+
