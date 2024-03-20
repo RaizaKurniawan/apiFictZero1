@@ -14,14 +14,14 @@ properties.parse(path.resolve(__dirname, '../config/env.properties'), { path: tr
 
         describe('Scenario 1: Get Wallet Info', function() {
             it('should return wallet info with valid token access', function(done) {
-                const randomToken = getRandomToken();
-                const options = {
-                    method: 'GET',
-                    url: `${baseUrl}/wallet?address=${validWalletAddress}`,
-                    headers: {
-                        'Authorization': `Bearer ${randomToken}`
+                    const randomToken = getRandomToken();
+                    const options = {
+                        method: 'GET',
+                        url: `${baseUrl}/wallet?address=${validWalletAddress}`,
+                        headers: {
+                            'Authorization': `Bearer ${randomToken}`
+                        }
                     }
-                };
 
                 request(options, function(error, response, body) {
                     assert.equal(response.statusCode, 200);
