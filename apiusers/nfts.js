@@ -31,7 +31,8 @@ properties.parse(path.resolve(__dirname, '../config/env.properties'), { path: tr
                     // Ekspektasi respons body
                     const expectedResponseBody = {
                         data: {
-                            walletAddress: validWalletAddress
+                            walletAddress: validWalletAddress,
+                            nftId: validnftId
                         },
                         meta: null,
                         error: null,
