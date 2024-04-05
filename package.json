@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "axios": "^1.6.8",
+    "jsonwebtoken": "^9.0.2",
+    "mocha": "^10.4.0"
+  }
+}
